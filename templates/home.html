@@ -1,9 +1,15 @@
 <link rel="stylesheet" href="/static/style.css" type="text/css">
 {% include 'nav.html' %}
-<h1>Welcome!</h1>
+<h1 style="text-align: center;">Welcome!</h1>
 
-<a href='/event_list'>See what events are available!</a>
-<br>
-<a href='/event_form'>Create Event</a>
-<br>
-<a href='/logout'>Logout</a>
+<form action="/event_list" >
+  <input class="btn" type="submit" value="See what events are available!">
+</form>
+
+<form action="/event_form" >
+  <input class="btn" type="submit" value="Create Event">
+</form>
+
+<form action="/logout" >
+  <input class="btn" type="submit" value="Logout">
+</form>

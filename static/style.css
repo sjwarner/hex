@@ -7,7 +7,7 @@ box-sizing: border-box;
 }
 body {
 font-family: Arial;
-background-color: #FFFFFF;
+background-color: #FBBA72;
 padding: 50px;
 }
 .login {
@@ -51,7 +51,7 @@ box-shadow: none;
 
 .btn {
   border: 2px solid transparent;
-  background: #3498DB;
+  background: #CA5310;
   color: #ffffff;
   font-size: 16px;
   line-height: 25px;
@@ -67,7 +67,7 @@ box-shadow: none;
 }
 
 .btn:hover {
-  background-color: #2980B9;
+  background-color: #8F250C;
 }
 
 .login-link {
@@ -98,12 +98,6 @@ $background-green: #1ead37;
 $blue: #0A92E5;
 $blue-medium: #4CAEEB;
 $blue-dark: #07507A;
-
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #F4F5F6;
-}
 
 a.image-link {
   text-decoration: none;
@@ -158,14 +152,14 @@ b, .bold {
 }
 
 .md-card {
-  background-color: #4CAEEB;
+  background-color: #CA5310;
   max-width: 600px;
   min-height: 200px;
   text-align: center;
-  margin: 0 auto;
+  margin: 10px auto;
 
   .card-header {
-    min-height: 12px;
+    min-height: 24px;
     background-color: #FFFFFF;
     color: #000000;
     font-size: 24px;
@@ -176,7 +170,7 @@ b, .bold {
 }
 
 .topnav {
-    background-color: #333;
+    background-color: #CA5310;
     overflow: hidden;
 }
 
@@ -184,7 +178,7 @@ b, .bold {
 .topnav a {
     float: left;
     color: #f2f2f2;
-    text-align: center;
+    text-align: center; 
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;

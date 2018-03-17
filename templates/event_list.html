@@ -4,26 +4,11 @@
 {% include 'nav.html' %}
  <div class="container">
    {% for event in events %}
-   <div class="md-card container-shadow">
-     <div class="card-header">
-       {% if event.event_name %}<h4>{{ event.event_name }}</h4>{% endif %}
-     </div>
-     <div class="content-section">
-       <img src="https://www.iconfinder.com/icons/339771/bee_food_honey_natural_sugar_sweet_icon" class="icon center">
-       {% if event.event_description %}<h4>{{ event.event_description }}</h4>{% endif %}
-       {% if event.event_location %}<h4>{{ event.event_location }}</h4>{% endif %}
-       {% if event.event_active %}<h4>{{ event.event_active }}</h4>{% endif %}
-       <form action="/join" >
-         <div class="login">
-       		<div class="login-screen">
-       			<div class="login-form">
-               <input type="submit" style="background-color: #FFFFFF;" value="Join">
-             </div>
-           </div>
-         </div>
-       </form>
-     </div>
-   </div>
+    {% if event.active %}
+     <form action="/event_page/{{event.id}}" >
+       <input type="submit" class="btn" value="{{ event.event_name }}, {{ event.event_description }}, {{ event.event_location }}">
+     </form>
+    {% endif %}
    {% endfor %}
  </div>
 {% endblock %}
