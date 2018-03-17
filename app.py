@@ -31,6 +31,30 @@ def do_admin_login():
         flash('wrong password!')
     return home()
 
+@app.route('/registration')
+def do_registration():
+    return render_template('register.html')
+
+@app.route('/register', methods=['POST'])
+def do_register():
+
+    POST_USERNAME = str(request.form['username'])
+    POST_PASSWORD = str(request.form['password'])
+
+    Session = sessionmaker(bind=engine)
+    s = Session()
+    query = s.query(User).filter(User.username.in_([POST_USERNAME]), User.password.in_([POST_PASSWORD]) )
+    result = query.first()
+
+    user = User(request.form['username'], request.form['password'])
+
+    Session = sessionmaker(bind=engine)
+    s = Session()
+    s.add(user)
+    s.commit()
+
+    return home()
+
 @app.route('/event_form')
 def event_form():
     return render_template('create_event.html')
