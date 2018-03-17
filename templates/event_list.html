@@ -1,0 +1,22 @@
+<link rel="stylesheet" href="/static/style.css" type="text/css">
+
+{% block body %}
+         <div class="row">
+            <div class="large-8 columns">
+               <div class="row container1">
+                   {% for event in events %}
+                       <div class="large-4 small-4 columns">
+                           <ul class="pricing-table">
+                               {% if event.event_name %}<li class="title">{{ event.event_name }}</li>{% endif %}
+                               {% if event.event_description %}<li class="price">{{ event.event_description }}</li>{% endif %}
+                               {% if event.event_location %}<li class="bullet-item">{{ event.event_location }}</li>{% endif %}
+                               {% if event.event_active %}<li class="description">{{ event.event_active }}</li>{% endif %}
+                           </ul>
+                       </div>
+                   {% endfor %}
+               </div>
+            </div>
+         </div>
+
+
+{% endblock %}
