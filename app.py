@@ -41,13 +41,14 @@ def get_event_page(id):
     Session = sessionmaker(bind=engine)
     s = Session()
     event = s.query(Event).filter(Event.id==id).one()
+    val = s.query(exists().where(Attendee.username==session['username'] and Attendee.event_id==id))
 
-    return render_template('event_page.html', event=event)
+    return render_template('event_page.html', event=event, already_participant=val)
 
 @app.route('/join', methods=['POST'])
 def do_join():
 
-    event = Attendee(request.form['id'], session['username'])
+    attendee = Attendee(request.form['id'], session['username'])
 
     Session = sessionmaker(bind=engine)
     s = Session()

@@ -3,9 +3,23 @@
 
 <h1 style="text-align: center;">{{ event.event_name }}</h1>
 
-<h3>Description</h3>
+<h2>Description</h2>
 {{ event.event_description }}
 <br>
 <br>
-<h3>Location</h3>
+<h2>Location</h2>
 {{ event.event_location }}
+<br>
+<br>
+
+<br>
+<br>
+
+{% if already_participant %}
+<form action="/join" >
+  <input type="submit" class="btn" value="Join In!">
+</form>
+{% else %}
+<h2>Attendees</h2>
+
+{% endif %}
