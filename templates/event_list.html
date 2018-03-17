@@ -13,6 +13,15 @@
        {% if event.event_description %}<h4>{{ event.event_description }}</h4>{% endif %}
        {% if event.event_location %}<h4>{{ event.event_location }}</h4>{% endif %}
        {% if event.event_active %}<h4>{{ event.event_active }}</h4>{% endif %}
+       <form action="/join" >
+         <div class="login">
+       		<div class="login-screen">
+       			<div class="login-form">
+               <input type="submit" style="background-color: #FFFFFF;" value="Join">
+             </div>
+           </div>
+         </div>
+       </form>
      </div>
    </div>
    {% endfor %}

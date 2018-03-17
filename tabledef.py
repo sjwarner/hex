@@ -42,5 +42,21 @@ class Event(Base):
         self.event_description = event_description
         self.event_location = event_location
         self.active = active
+
+########################################################################
+class Attendee(Base):
+    """"""
+    __tablename__ = "attendees"
+
+    id = Column(Integer, primary_key=True)
+    event_id = Column(Integer)
+    username = Column(String)
+
+    #----------------------------------------------------------------------
+    def __init__(self, event_id, username):
+        """"""
+        self.event_id = event_id
+        self.username = username
+
 # create tables
 Base.metadata.create_all(engine)

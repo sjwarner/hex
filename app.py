@@ -35,6 +35,18 @@ def do_admin_login():
 def do_registration():
     return render_template('register.html')
 
+@app.route('/join', methods=['POST'])
+def do_join():
+
+    event = Attendee(request.form['id'], session['username'])
+
+    Session = sessionmaker(bind=engine)
+    s = Session()
+    s.add(attendee)
+    s.commit()
+
+    return home()
+
 @app.route('/register', methods=['POST'])
 def do_register():
 
